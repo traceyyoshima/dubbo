@@ -697,7 +697,7 @@
                 <plugin>
                     <groupId>org.openrewrite.maven</groupId>
                     <artifactId>rewrite-maven-plugin</artifactId>
-                    <version>4.14.0-SNAPSHOT</version>
+                    <version>4.17.0-SNAPSHOT</version>
                     <configuration>
                         <activeRecipes>
                             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
