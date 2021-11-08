@@ -28,7 +28,7 @@ public class AdaptiveCompilerTest extends JavaCodeTest {
         AdaptiveCompiler compiler = new AdaptiveCompiler();
         compiler.setFrameworkModel(FrameworkModel.defaultModel());
         Class<?> clazz = compiler.compile(getSimpleCode(), AdaptiveCompiler.class.getClassLoader());
-        HelloService helloService = (HelloService) clazz.newInstance();
+        HelloService helloService = (HelloService) clazz.getDeclaredConstructor().newInstance();
         Assertions.assertEquals("Hello world!", helloService.sayHello());
     }
 

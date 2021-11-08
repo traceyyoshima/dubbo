@@ -68,7 +68,7 @@ public class LoggerFactory {
                 );
                 for (Class<? extends LoggerAdapter> clazz : candidates) {
                     try {
-                        setLoggerAdapter(clazz.newInstance());
+                        setLoggerAdapter(clazz.getDeclaredConstructor().newInstance());
                         break;
                     } catch (Throwable ignored) {
                     }
