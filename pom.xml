@@ -690,6 +690,14 @@
                     </execution>
                 </executions>
             </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jdeprscan-plugin</artifactId>
+            <version>3.0.0-alpha-1</version>
+            <configuration>
+               <release>11</release>
+            </configuration>
+         </plugin>
         </plugins>
 
         <pluginManagement>

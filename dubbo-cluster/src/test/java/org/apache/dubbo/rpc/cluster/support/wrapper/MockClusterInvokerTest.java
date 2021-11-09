@@ -506,7 +506,7 @@ public class MockClusterInvokerTest {
         invocation.setMethodName("getInt1");
         Result ret = cluster.invoke(invocation);
         Assertions.assertTrue(ret.getValue() instanceof Integer, "result type must be integer but was : " + ret.getValue().getClass());
-        Assertions.assertEquals(new Integer(1688), (Integer) ret.getValue());
+        Assertions.assertEquals(Integer.valueOf(1688), (Integer) ret.getValue());
     }
 
     @Test

@@ -224,7 +224,7 @@ public abstract class Proxy {
             ccm.setSuperClass(Proxy.class);
             ccm.addMethod("public Object newInstance(" + InvocationHandler.class.getName() + " h){ return new " + pcn + "($1); }");
             Class<?> pc = ccm.toClass(appClassLoader, domain);
-            proxy = (Proxy) pc.newInstance();
+            proxy = (Proxy) pc.getDeclaredConstructor().newInstance();
 
             synchronized (classCache) {
                 classCache.put(key, new SoftReference<Class<?>>(pc));

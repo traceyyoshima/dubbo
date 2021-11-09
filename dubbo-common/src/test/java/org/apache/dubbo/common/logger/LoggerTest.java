@@ -48,7 +48,7 @@ public class LoggerTest {
     @ParameterizedTest
     @MethodSource("data")
     public void testAllLogMethod(Class<? extends LoggerAdapter> loggerAdapter) throws Exception {
-        LoggerAdapter adapter = loggerAdapter.newInstance();
+        LoggerAdapter adapter = loggerAdapter.getDeclaredConstructor().newInstance();
         adapter.setLevel(Level.ALL);
         Logger logger = adapter.getLogger(this.getClass());
         logger.error("error");
